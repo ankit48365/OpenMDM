@@ -3,13 +3,13 @@ import recordlinkage
 import networkx as nx
 
 # 5.1. Load and prepare your data
-df = pd.read_csv('/home/ankiz/Documents/mygit/OpenMDM/mdm/source_data/Data_Set_2_20_modified.csv')
+df = pd.read_csv('/home/ankiz/Documents/mygit/OpenMDM/mdm/source_data/Data_Set_1.csv')
 df.reset_index(drop=True, inplace=True)
 df.index.name = 'record_id'
 
 # 5.2. Blocking
 indexer = recordlinkage.Index()
-indexer.block(['last_name', 'zip_code'])
+indexer.block(['first_name','middle_name','last_name'])
 candidate_pairs = indexer.index(df, df)
 candidate_pairs = candidate_pairs[candidate_pairs.get_level_values(0) != candidate_pairs.get_level_values(1)]
 print(f"🧮 Total candidate pairs after blocking: {len(candidate_pairs)}")
@@ -20,21 +20,21 @@ compare.string('first_name', 'first_name', method='jarowinkler', label='fn_sim')
 compare.string('middle_name', 'middle_name', method='jarowinkler', label='mn_sim')
 compare.string('last_name', 'last_name', method='jarowinkler', label='ln_sim')
 compare.string('address', 'address', method='levenshtein', label='addr_sim')
-compare.string('city', 'city', method='jarowinkler', label='city_sim')
-compare.exact('zip_code', 'zip_code', label='zip_match')
-compare.string('phone', 'phone', method='damerau_levenshtein', label='phone_sim')
-compare.string('email', 'email', method='jarowinkler', label='email_sim')
+# compare.string('city', 'city', method='jarowinkler', label='city_sim')
+# compare.exact('zip_code', 'zip_code', label='zip_match')
+# compare.string('phone', 'phone', method='damerau_levenshtein', label='phone_sim')
+# compare.string('email', 'email', method='jarowinkler', label='email_sim')
 
 features = compare.compute(candidate_pairs, df, df)
 features['score'] = (
     features['fn_sim'] + features['mn_sim'] + features['ln_sim'] +
-    features['addr_sim'] + features['city_sim'] + features['zip_match'] +
-    features['phone_sim'] + features['email_sim']
-) / 8
+    features['addr_sim'] #+ features['city_sim'] + features['zip_match'] 
+    # + features['phone_sim'] + features['email_sim']
+) / 4 # this is total fields being compared
 
 features['match_category'] = pd.cut(
     features['score'],
-    bins=[0, 0.6, 0.78, 1.0],
+    bins=[0, 0.7, 0.88, 1.0],
     labels=['non_match', 'review', 'auto_merge']
 )
 
@@ -61,7 +61,7 @@ def write_pairwise_summary(df, features, category, output_path):
 output_path = '/home/ankiz/Documents/mygit/OpenMDM/mdm/source_data/mdm_similarity_summary.txt'
 write_pairwise_summary(df, features, 'auto_merge', output_path)
 write_pairwise_summary(df, features, 'review', output_path)
-write_pairwise_summary(df, features, 'non_match', output_path)
+# write_pairwise_summary(df, features, 'non_match', output_path)
 
 # 5.5. 🎯 Cluster auto_merge pairs to remove reverse duplicates
 auto_merge_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
