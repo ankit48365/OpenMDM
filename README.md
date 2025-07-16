@@ -1,11 +1,15 @@
-# OpenMDM
+![pylint](https://img.shields.io/badge/pylint-8.46-yellow)
+![CurrentLocal](https://img.shields.io/badge/machine-Latitude-brightgreen)
 
+## OpenMDM
 
-## Clone only required branch (dont clone main please)
+#### Github action dynamic pylint with "CheckCodeQuality" commit message 
+
+### Clone only required branch (dont clone main please)
 
 git clone --branch brnch_name --single-branch <repo-url>
 
-## Choosing UV over venv this time
+### Choosing UV over venv this time
 
 ### UV on Windows 
 #### On Power shell run
