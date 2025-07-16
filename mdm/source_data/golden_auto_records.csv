@@ -1,0 +1,3 @@
+first_name,middle_name,last_name,address,city,state,zip_code,phone,email,source_ids,merge_score
+Lauren,Dan,Grant,942 Hardin Falls Apt. 809,New Angelafort,New Mexico,96233.0,273-604-8183x879,alexis90@example.net,"[3, 8]",0.8021
+Brian,Elizabeth,Price,898 Mason Vista Apt. 292,Comptonbury,Iowa,91096.0,574-820-8203x7970,carpenterjulie@example.com,"[4, 9]",0.9367

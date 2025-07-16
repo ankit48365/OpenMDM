@@ -1,0 +1,30 @@
+
+--- AUTO_MERGE RECORDS ---
+🔹 Record 1 (3): {'first_name': 'Lauren', 'middle_name': nan, 'last_name': 'Grant', 'address': '942 Hardin Falls Apt. 809', 'city': 'New Angelafort', 'state': 'New Mexico', 'zip_code': 96233.0, 'phone': '273-604-8183x879', 'email': 'alexis90@example.net', 'Original': 'Y'}
+🔸 Record 2 (8): {'first_name': 'Lauren', 'middle_name': 'Dan', 'last_name': 'Grant', 'address': '942 Hardin Falls # 809', 'city': 'New Angelafort', 'state': nan, 'zip_code': 96233.0, 'phone': '273-604-8183x879', 'email': 'douglasdiaz@example.com ', 'Original': 'N'}
+💡 Similarity Score: 0.8021 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+🔹 Record 1 (4): {'first_name': 'Brian', 'middle_name': 'Elizabeth', 'last_name': 'Price', 'address': '898 Mason Vista Apt. 292', 'city': 'Comptonbury', 'state': 'Iowa', 'zip_code': 91096.0, 'phone': '574-820-8203x7970', 'email': 'carpenterjulie@example.com', 'Original': 'Y'}
+🔸 Record 2 (9): {'first_name': 'Brian', 'middle_name': 'Elizabeth', 'last_name': 'Price', 'address': '898 Mason Vista # 292', 'city': 'Comptonbury', 'state': nan, 'zip_code': 91096.0, 'phone': '574-820-8203x7970', 'email': 'brucegomez@example.org ', 'Original': 'N'}
+💡 Similarity Score: 0.9367 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+🔹 Record 1 (8): {'first_name': 'Lauren', 'middle_name': 'Dan', 'last_name': 'Grant', 'address': '942 Hardin Falls # 809', 'city': 'New Angelafort', 'state': nan, 'zip_code': 96233.0, 'phone': '273-604-8183x879', 'email': 'douglasdiaz@example.com ', 'Original': 'N'}
+🔸 Record 2 (3): {'first_name': 'Lauren', 'middle_name': nan, 'last_name': 'Grant', 'address': '942 Hardin Falls Apt. 809', 'city': 'New Angelafort', 'state': 'New Mexico', 'zip_code': 96233.0, 'phone': '273-604-8183x879', 'email': 'alexis90@example.net', 'Original': 'Y'}
+💡 Similarity Score: 0.8021 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+🔹 Record 1 (9): {'first_name': 'Brian', 'middle_name': 'Elizabeth', 'last_name': 'Price', 'address': '898 Mason Vista # 292', 'city': 'Comptonbury', 'state': nan, 'zip_code': 91096.0, 'phone': '574-820-8203x7970', 'email': 'brucegomez@example.org ', 'Original': 'N'}
+🔸 Record 2 (4): {'first_name': 'Brian', 'middle_name': 'Elizabeth', 'last_name': 'Price', 'address': '898 Mason Vista Apt. 292', 'city': 'Comptonbury', 'state': 'Iowa', 'zip_code': 91096.0, 'phone': '574-820-8203x7970', 'email': 'carpenterjulie@example.com', 'Original': 'Y'}
+💡 Similarity Score: 0.9367 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+
+--- REVIEW RECORDS ---
+🔹 Record 1 (2): {'first_name': 'Danielle', 'middle_name': 'Joseph', 'last_name': 'Barker', 'address': '18553 Jesse Loop Suite 367', 'city': 'West Amyberg', 'state': 'North Carolina', 'zip_code': 40878.0, 'phone': '832-384-7900x6323', 'email': 'williamsmelanie@example.com', 'Original': 'Y'}
+🔸 Record 2 (7): {'first_name': 'Danielle', 'middle_name': 'J', 'last_name': 'Barker', 'address': '18553 Jesse Loop STE 367', 'city': nan, 'state': 'North Carolina', 'zip_code': 40878.0, 'phone': '322.331.9676x680', 'email': ' ', 'Original': 'N'}
+💡 Similarity Score: 0.6039 | Match Category: review
+--------------------------------------------------------------------------------
+🔹 Record 1 (7): {'first_name': 'Danielle', 'middle_name': 'J', 'last_name': 'Barker', 'address': '18553 Jesse Loop STE 367', 'city': nan, 'state': 'North Carolina', 'zip_code': 40878.0, 'phone': '322.331.9676x680', 'email': ' ', 'Original': 'N'}
+🔸 Record 2 (2): {'first_name': 'Danielle', 'middle_name': 'Joseph', 'last_name': 'Barker', 'address': '18553 Jesse Loop Suite 367', 'city': 'West Amyberg', 'state': 'North Carolina', 'zip_code': 40878.0, 'phone': '832-384-7900x6323', 'email': 'williamsmelanie@example.com', 'Original': 'Y'}
+💡 Similarity Score: 0.6039 | Match Category: review
+--------------------------------------------------------------------------------
+
+--- NON_MATCH RECORDS ---

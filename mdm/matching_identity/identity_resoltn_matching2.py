@@ -109,11 +109,19 @@ def merge_auto_pairs(df, features):
 
 output_path = '/home/ankiz/Documents/mygit/OpenMDM/mdm/source_data/mdm_similarity_summary.txt'
 
+# Write summary sections
 write_pairwise_summary(df, features, 'auto_merge', output_path)
 write_pairwise_summary(df, features, 'review', output_path)
 write_pairwise_summary(df, features, 'non_match', output_path)
 
-golden_df = merge_auto_pairs(df, features)
+# 🧼 Deduplicate auto_merge pairs before merging
+auto_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
+auto_pairs[['id_min', 'id_max']] = auto_pairs[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
+auto_pairs = auto_pairs.drop_duplicates(subset=['id_min', 'id_max'])
+filtered_auto_features = auto_pairs.set_index(['record_id_1', 'record_id_2'])
+
+# 🏅 Merge golden records only from deduplicated auto_merge pairs
+golden_df = merge_auto_pairs(df, filtered_auto_features)
 golden_df.to_csv('/home/ankiz/Documents/mygit/OpenMDM/mdm/source_data/golden_auto_records.csv', index=False)
 
 # # Define the output file path
