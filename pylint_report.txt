@@ -1,0 +1,7 @@
+************* Module ingestion.main
+mdm/ingestion/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+mdm/ingestion/main.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 5.00/10
+
