@@ -1,0 +1,69 @@
+name: Pylint Code Quality Check
+
+on:
+  push:  # Trigger on every push to any branch
+    branches:
+      - "**"  # This pattern means any branch
+
+permissions:
+  contents: write
+
+jobs:
+  pylint:
+
+    if: contains(github.event.head_commit.message, 'CheckCodeQuality')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GHA_TOKEN }}
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip > /dev/null
+          pip install pylint > /dev/null
+
+      - name: Run pylint
+        run: |
+          pylint mdm/ > pylint_report.txt || true
+
+      - name: Pylint Score Badge Update
+        run: |
+          PYLINT_SCORE=$(grep -oP 'rated at \K[0-9]+\.[0-9]+' pylint_report.txt)
+          if [[ -z "$PYLINT_SCORE" ]]; then
+            echo "⚠️ Could not extract Pylint score. Check if pylint_report.txt contains 'rated at ...'"
+            exit 1
+          fi
+          echo "Pylint Score: $PYLINT_SCORE"
+
+          # Determine badge color based on score
+          if (( $(echo "$PYLINT_SCORE >= 9.0" | bc -l) )); then
+            COLOR="green"
+          elif (( $(echo "$PYLINT_SCORE >= 7.0" | bc -l) )); then
+            COLOR="yellow"
+          else
+            COLOR="red"
+          fi
+
+          # Remove existing badges
+          sed -i '/!\[pylint\]/d' README.md
+
+          # Prepend updated badges to README
+          echo -e "![pylint](https://img.shields.io/badge/pylint-$PYLINT_SCORE-$COLOR)\n$(cat README.md)" > README.md.tmp
+          mv README.md.tmp README.md
+
+      - name: Commit and Push README update
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GHA_TOKEN }}@github.com/${{ github.repository }}
+          git add README.md pylint_report.txt
+          git commit -m "Update Pylint badge in README [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:${{ github.ref_name }}
