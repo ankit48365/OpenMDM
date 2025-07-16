@@ -1,0 +1,8 @@
+first_name,middle_name,last_name,address,city,state,zip_code,phone,email,Original
+Tanner,Michael,Martinez,8983 Austin Creek Suite 015,Gonzalezberg,Connecticut,98096,001-899-748-0066x119,pwright@example.com,Y
+Ashley,Jason,Gibson,625 Calvin Pines Apt. 249,West Christopher,Montana,40907,9494698497,smithjeffrey@example.net,Y
+Tanner,M,Martinez,8983 Austin Creek Suit 015,Gonzalezberg,California,,, ,N
+Tanner,Mike,Martinez,8983 Austin Creek STE 015,,Connecticut,,(399)824-1070,morganchristian@example.com ,N
+Ashley,Jason,Gibson,625 Calvin Pines APT 249,West Christopher,,,,smithjeffrey@example.net ,N
+Ashley,Jason,Gibson,625 Calvin Pines APT 249,,Maine,40907,766.694.8839x0760,smithjeffrey@example.net ,N
+Ash,Jason,Gibson,625 Calvin Pines APT 249,,New York,,9494698497,smithjeffrey@example.net ,N
