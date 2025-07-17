@@ -127,8 +127,14 @@ def merge_cluster(df, cluster):
 all_ids = set(df.index)
 # Get all clustered record IDs from auto_merge clusters
 clustered_ids = set().union(*clusters)
+
+review_pairs = features[features['match_category'] == 'review'].reset_index()
+review_ids = set(review_pairs['record_id_1']) | set(review_pairs['record_id_2'])
+
 # Identify singleton records: those not involved in any auto_merge cluster
-singleton_ids = sorted(all_ids - clustered_ids)
+singleton_ids = sorted(all_ids - clustered_ids - review_ids)
+# singleton_ids = sorted(all_ids - clustered_ids)
+
 
 singleton_goldens = []
 
@@ -151,7 +157,12 @@ with open(output_path, 'a', encoding='utf-8') as f:
 
 
 # 6.3. Writing Golden Records with merged and singleton records 
-golden_clusters = [merge_cluster(df, cluster) for cluster in clusters]
+
+# Convert each cluster to a frozenset and deduplicate
+unique_clusters = {frozenset(cluster) for cluster in clusters}
+# Proceed with merging only unique clusters
+golden_clusters = [merge_cluster(df, list(cluster)) for cluster in unique_clusters]
+
 singleton_goldens_series = [pd.Series(rec) for rec in singleton_goldens]
 golden_df = pd.DataFrame(golden_clusters + singleton_goldens_series)
 golden_df.to_csv(r'D:\mygit\OpenMDM\mdm\source_data\golden_auto_records.csv', index=False)
