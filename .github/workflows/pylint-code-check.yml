@@ -1,4 +1,4 @@
-name: Pylint Code Quality Check
+name: Pylint sqlfluff Quality Check
 
 on:
   push:  # Trigger on every push to any branch
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  pylint:
+  pylint_sqlfluff:
 
     if: contains(github.event.head_commit.message, 'CheckCodeQuality')
     runs-on: ubuntu-latest
@@ -57,6 +57,67 @@ jobs:
 
           # Prepend updated badges to README
           echo -e "![pylint](https://img.shields.io/badge/pylint-$PYLINT_SCORE-$COLOR)\n$(cat README.md)" > README.md.tmp
+          mv README.md.tmp README.md
+
+
+      ## SQLFLUFF PART FROM HERE ON ---> 
+
+      # Install dbt Core and dependencies
+      - name: Install dbt
+        run: |
+          pip install dbt-core dbt-sqlite > /dev/null # > /dev/null 2>&1 will hide even errors
+          dbt --version > /dev/null
+
+      # Create profiles.yml
+      - name: Configure dbt profiles
+        # env:
+        #   GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          dbt_store_cleanup:
+            target: dev
+            outputs:
+              dev:
+                type: sqlite
+                threads: 1
+                database: <database name>  # This can remain as is or be omitted for SQLite
+                schema: 'main'  # Default schema for the connection
+                schemas_and_paths:
+                  main: '/home/runner/work/OpenMDM/OpenMDM/database/dbt_etl_dev.db'  # Source tables
+                schema_directory: '/home/runner/work/OpenMDM/OpenMDM/database'
+          EOF
+
+      - name: Install SQLFluff
+        run: pip install sqlfluff sqlfluff-templater-dbt > /dev/null
+
+
+      - name: Run SQLFluff linting
+        run: sqlfluff lint --dialect sqlite -v ./mdm/dbt_store_cleanup/models > sqlfluff_report.txt || true
+        env:
+          DBT_PROFILES_DIR: /home/runner/.dbt
+          DBT_PROJECT_DIR: /home/runner/work/OpenMDM/OpenMDM/mdm/dbt_store_cleanup
+        continue-on-error: true
+
+      - name: Voilation Count and Badge Update in SQLFluff
+        run: |
+          VIOLATION_COUNT=$(grep -A 1 '==== summary ====' sqlfluff_report.txt | grep -oP 'violations:\s+\K\d+')
+          echo "SQLFluff Violations: $VIOLATION_COUNT"
+          # Remove existing SQLFluff badge
+          sed -i '/!\[sqlfluff\]/d' README.md
+
+          #Badge Color Logic
+          if (( $(echo "$VIOLATION_COUNT <= 3.0" | bc -l) )); then
+            COLOR="green"
+          elif (( $(echo "$VIOLATION_COUNT <= 6.0" | bc -l) )); then
+            COLOR="yellow"
+          else
+            COLOR="red"
+          fi
+
+          # Create a new README with the badge prepended
+          echo -e "![sqlfluff](https://img.shields.io/badge/sql%20violations-$VIOLATION_COUNT-$COLOR)\n$(cat README.md)" > README.md.tmp
+          # Replace the original README with the updated one
           mv README.md.tmp README.md
 
       - name: Commit and Push README update

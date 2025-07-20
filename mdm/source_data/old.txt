@@ -1,0 +1,74 @@
+
+--- AUTO_MERGE RECORDS ---
+🔹 Record 1 (2): {'first_name': 'Krista', 'middle_name': 'Anna', 'last_name': 'Leonard', 'address': '16462 Graham Plain', 'city': 'South Linda', 'state': 'South Carolina', 'zip_code': '64525', 'phone': '+1-232-755-1627x4205', 'email': 'langkathryn@example.com', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+🔸 Record 2 (10): {'first_name': 'Krista', 'middle_name': 'Anna', 'last_name': 'Leonard', 'address': '16462 Graham Plain', 'city': 'South Linda', 'state': 'Delaware', 'zip_code': '64525', 'phone': 'BLANK', 'email': 'langkathryn@example.com ', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 1.0 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+🔹 Record 1 (5): {'first_name': 'Valerie', 'middle_name': 'Aaron', 'last_name': 'Johns', 'address': '17028 Ferguson Stravenue Suite 849', 'city': 'Lake Stevenfurt', 'state': 'Washington', 'zip_code': '12518', 'phone': '5887466316', 'email': 'stacysnyder@example.net', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+🔸 Record 2 (11): {'first_name': 'Valerie', 'middle_name': 'Aaron', 'last_name': 'Johns', 'address': '17028 Ferguson Stravenue Suit 849', 'city': 'BLANK', 'state': 'Washington', 'zip_code': '12518', 'phone': '5887466316', 'email': ' ', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.8988 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+🔹 Record 1 (7): {'first_name': 'William', 'middle_name': 'David', 'last_name': 'Jimenez', 'address': '847 Michael Vista Apt. 636', 'city': 'Popemouth', 'state': 'Oklahoma', 'zip_code': '13456', 'phone': '(388)871-7333x93986', 'email': 'kimberly09@example.com', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+🔸 Record 2 (12): {'first_name': 'William', 'middle_name': 'Dave', 'last_name': 'Jimenez', 'address': '847 Michael Vista Apartment 636', 'city': 'Popemouth', 'state': 'New York', 'zip_code': '13456', 'phone': '(388)871-7333x93986', 'email': 'kimberly09@example.com ', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.9425 | Match Category: auto_merge
+--------------------------------------------------------------------------------
+
+--- REVIEW RECORDS ---
+🔹 Record 1 (0): {'first_name': 'Valerie', 'middle_name': 'Jessica', 'last_name': 'Phillips', 'address': '053 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'mwest@example.net', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+🔸 Record 2 (9): {'first_name': 'Valerie', 'middle_name': 'Jessica', 'last_name': 'Phillips', 'address': '053 Hopkins Ports', 'city': 'BLANK', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': ' ', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.8333 | Match Category: review
+--------------------------------------------------------------------------------
+🔹 Record 1 (8): {'first_name': 'Heather', 'middle_name': 'Ann', 'last_name': 'James', 'address': '2746 Taylor Drive', 'city': 'West Daniel', 'state': 'Missouri', 'zip_code': '92629', 'phone': '685-934-9847x15014', 'email': 'dianemartin@example.com', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+🔸 Record 2 (14): {'first_name': 'Heather', 'middle_name': 'Ann', 'last_name': 'James', 'address': '2746 Taylor Drive', 'city': 'BLANK', 'state': 'BLANK', 'zip_code': '92629', 'phone': '001-594-804-4802x014', 'email': 'dianemartin@example.com ', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.8333 | Match Category: review
+--------------------------------------------------------------------------------
+
+--- NON_MATCHED SINGLE RECORDS ---
+🧍 Record (1): {'first_name': 'Brent', 'middle_name': 'Tina', 'last_name': 'Keith', 'address': '546 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (3): {'first_name': 'Jose', 'middle_name': 'Matthew', 'last_name': 'Jennings', 'address': '82249 Hickman Haven', 'city': 'New Danielberg', 'state': 'Idaho', 'zip_code': '55847', 'phone': '798-675-8507x46574', 'email': 'richardrobert@example.net', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (4): {'first_name': 'Ryan', 'middle_name': 'Katherine', 'last_name': 'Stephens', 'address': '758 Robert Cliff', 'city': 'Lake Frankside', 'state': 'New Hampshire', 'zip_code': '06678', 'phone': '2156792243', 'email': 'woodwardkristin@example.org', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (6): {'first_name': 'Joan', 'middle_name': 'Travis', 'last_name': 'Mejia', 'address': '0872 Pineda Crossing', 'city': 'Charlesview', 'state': 'Alabama', 'zip_code': '72234', 'phone': '943.224.1442', 'email': 'jonathan09@example.com', 'original': 'Y', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (13): {'first_name': 'Will', 'middle_name': 'D', 'last_name': 'Jimenez', 'address': '847 Michael Vista Apartment 636', 'city': 'BLANK', 'state': 'Illinois', 'zip_code': '00000', 'phone': '567.368.4733x3098', 'email': ' ', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (15): {'first_name': 'Jason', 'middle_name': 'Allison', 'last_name': 'Alvarez', 'address': '83939 David Club', 'city': 'Jonesberg', 'state': 'Idaho', 'zip_code': '96741', 'phone': '+1-732-595-8502x427', 'email': 'montesbradley@example.org', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (16): {'first_name': 'Tamara', 'middle_name': 'Jennifer', 'last_name': 'Vance', 'address': '61513 Hunt Forest Apt. 265', 'city': 'Farleyfort', 'state': 'North Carolina', 'zip_code': '04540', 'phone': '(797)652-3978x48690', 'email': 'gvasquez@example.net', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (17): {'first_name': 'Douglas', 'middle_name': 'William', 'last_name': 'Dennis', 'address': '0598 Julia Loop', 'city': 'North Michellemouth', 'state': 'South Dakota', 'zip_code': '16524', 'phone': '+1-954-559-0911', 'email': 'goldenkatherine@example.net', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (18): {'first_name': 'Michael', 'middle_name': 'Michael', 'last_name': 'Riggs', 'address': '952 Donna Meadow', 'city': 'New Cherylside', 'state': 'Missouri', 'zip_code': '55125', 'phone': '375.594.2294x1733', 'email': 'paul77@example.org', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (19): {'first_name': 'Shaun', 'middle_name': 'Rebecca', 'last_name': 'Hall', 'address': '3034 Lisa Inlet Suite 445', 'city': 'Cookborough', 'state': 'Nevada', 'zip_code': '60687', 'phone': '367.478.8132x966', 'email': 'janetwilliams@example.org', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (20): {'first_name': 'Thomas', 'middle_name': 'Michelle', 'last_name': 'Hart', 'address': '57880 Watkins Roads Suite 382', 'city': 'Karabury', 'state': 'West Virginia', 'zip_code': '51820', 'phone': '(739)762-7263', 'email': 'hughescindy@example.net', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (21): {'first_name': 'Christina', 'middle_name': 'Clayton', 'last_name': 'Shaw', 'address': '138 Nicole Court Apt. 867', 'city': 'Skinnerton', 'state': 'Nebraska', 'zip_code': '75221', 'phone': '001-346-930-8135x911', 'email': 'cory29@example.net', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (22): {'first_name': 'Michael', 'middle_name': 'Anna', 'last_name': 'Barr', 'address': '83984 Cervantes Square', 'city': 'West Sabrina', 'state': 'West Virginia', 'zip_code': '06148', 'phone': '893.571.4135x57419', 'email': 'dward@example.com', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (23): {'first_name': 'Juan', 'middle_name': 'Leah', 'last_name': 'Monroe', 'address': '349 Jerry Place Suite 284', 'city': 'West Frankport', 'state': 'Wisconsin', 'zip_code': '42550', 'phone': '(206)234-0039x16228', 'email': 'russell10@example.net', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (24): {'first_name': 'Cody', 'middle_name': 'Adam', 'last_name': 'Robinson', 'address': '9804 Keith Shoals Apt. 807', 'city': 'Newmanport', 'state': 'Wisconsin', 'zip_code': '81790', 'phone': '783.807.1089x912', 'email': 'floresamber@example.org', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------
+🧍 Record (25): {'first_name': 'Dana', 'middle_name': 'Claire', 'last_name': 'Mullins', 'address': '872 Young Wall', 'city': 'East Michaelmouth', 'state': 'North Carolina', 'zip_code': '25929', 'phone': '001-375-937-1809x2251', 'email': 'destinyrivera@example', 'original': 'N', '_load_datetime': '2025-07-20 02:40:36'}
+💡 Similarity Score: 0.0 | Match Category: non_match (singleton)
+--------------------------------------------------------------------------------

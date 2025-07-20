@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: slvr_personal_info
+    description: ""
+    columns:
+      - name: first_name
+        data_type: text
+        description: ""
+
+      - name: middle_name
+        data_type: text
+        description: ""
+
+      - name: last_name
+        data_type: text
+        description: ""
+
+      - name: address
+        data_type: text
+        description: ""
+
+      - name: city
+        data_type: text
+        description: ""
+
+      - name: state
+        data_type: text
+        description: ""
+
+      - name: zip_code
+        data_type: text
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "zip_code != ''"
+        description: ""
+
+      - name: phone
+        data_type: text
+        description: ""
+
+      - name: email
+        data_type: text
+        description: ""
+
+      - name: original
+        data_type: text
+        description: ""
