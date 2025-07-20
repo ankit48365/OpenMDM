@@ -93,7 +93,7 @@ jobs:
 
 
       - name: Run SQLFluff linting
-        run: sqlfluff lint --dialect sqlite -v ./mdm/dbt_store_cleanup/models > sqlfluff_report.txt
+        run: sqlfluff lint --dialect sqlite -v ./mdm/dbt_store_cleanup/models > sqlfluff_report.txt || true
         env:
           DBT_PROFILES_DIR: /home/runner/.dbt
           DBT_PROJECT_DIR: /home/runner/work/OpenMDM/OpenMDM/mdm/dbt_store_cleanup

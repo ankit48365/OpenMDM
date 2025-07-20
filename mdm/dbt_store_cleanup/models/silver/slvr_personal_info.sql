@@ -57,4 +57,4 @@ FROM
 
  --I see what's tripping things up: COALESCE() is designed to replace NULL values—but it doesn’t do anything to empty strings (''). 
  --So if your zip_code or other fields contain empty values like '', COALESCE(column, 'BLANK') won’t touch them, because they’re not NULL.
- -- COALESCE(original, 'BLANK') AS original     ~ wont work
+ -- COALESCE(original, 'BLANK') AS original     ~ wont work 
