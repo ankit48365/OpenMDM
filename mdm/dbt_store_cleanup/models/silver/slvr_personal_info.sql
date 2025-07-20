@@ -10,7 +10,8 @@ SELECT
     CASE WHEN zip_code IS NULL OR zip_code = '' THEN '00000' ELSE zip_code END AS zip_code,
     CASE WHEN phone IS NULL OR phone = '' THEN 'BLANK' ELSE phone END AS phone,
     CASE WHEN email IS NULL OR email = '' THEN 'BLANK' ELSE email END AS email,
-    CASE WHEN original IS NULL OR original = '' THEN '-' ELSE original END AS original
+    CASE WHEN original IS NULL OR original = '' THEN '-' ELSE original END AS original,
+    datetime('now') AS _load_datetime
 FROM {{ source('source_schema', 'personal_info') }}
 
  --I see what's tripping things up: COALESCE() is designed to replace NULL values—but it doesn’t do anything to empty strings (''). 

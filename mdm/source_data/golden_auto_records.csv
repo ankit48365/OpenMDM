@@ -1,19 +1,20 @@
-first_name,middle_name,last_name,address,city,state,zip_code,phone,email,source_ids,merge_score
-William,David,Jimenez,847 Michael Vista Apt. 636,Popemouth,Oklahoma,13456.0,(388)871-7333x93986,kimberly09@example.com,"[np.int64(12), np.int64(7)]",1.0
-Krista,Anna,Leonard,16462 Graham Plain,South Linda,South Carolina,64525.0,+1-232-755-1627x4205,langkathryn@example.com,"[np.int64(2), np.int64(10)]",1.0
-Brent,Tina,Keith,546 Williams Points,Barbarabury,Oklahoma,28304.0,420-401-2179x21684,amybaker@example.org,[1],0.0
-Jose,Matthew,Jennings,82249 Hickman Haven,New Danielberg,Idaho,55847.0,798-675-8507x46574,richardrobert@example.net,[3],0.0
-Ryan,Katherine,Stephens,758 Robert Cliff,Lake Frankside,New Hampshire,6678.0,2156792243,woodwardkristin@example.org,[4],0.0
-Joan,Travis,Mejia,0872 Pineda Crossing,Charlesview,Alabama,72234.0,943.224.1442,jonathan09@example.com,[6],0.0
-Will,D,Jimenez,847 Michael Vista Apartment 636,,Illinois,,567.368.4733x3098,,[13],0.0
-Jason,Allison,Alvarez,83939 David Club,Jonesberg,Idaho,96741.0,+1-732-595-8502x427,montesbradley@example.org,[15],0.0
-Tamara,Jennifer,Vance,61513 Hunt Forest Apt. 265,Farleyfort,North Carolina,4540.0,(797)652-3978x48690,gvasquez@example.net,[16],0.0
-Douglas,William,Dennis,0598 Julia Loop,North Michellemouth,South Dakota,16524.0,+1-954-559-0911,goldenkatherine@example.net,[17],0.0
-Michael,Michael,Riggs,952 Donna Meadow,New Cherylside,Missouri,55125.0,375.594.2294x1733,paul77@example.org,[18],0.0
-Shaun,Rebecca,Hall,3034 Lisa Inlet Suite 445,Cookborough,Nevada,60687.0,367.478.8132x966,janetwilliams@example.org,[19],0.0
-Thomas,Michelle,Hart,57880 Watkins Roads Suite 382,Karabury,West Virginia,51820.0,(739)762-7263,hughescindy@example.net,[20],0.0
-Christina,Clayton,Shaw,138 Nicole Court Apt. 867,Skinnerton,Nebraska,75221.0,001-346-930-8135x911,cory29@example.net,[21],0.0
-Michael,Anna,Barr,83984 Cervantes Square,West Sabrina,West Virginia,6148.0,893.571.4135x57419,dward@example.com,[22],0.0
-Juan,Leah,Monroe,349 Jerry Place Suite 284,West Frankport,Wisconsin,42550.0,(206)234-0039x16228,russell10@example.net,[23],0.0
-Cody,Adam,Robinson,9804 Keith Shoals Apt. 807,Newmanport,Wisconsin,81790.0,783.807.1089x912,floresamber@example.org,[24],0.0
-Dana,Claire,Mullins,872 Young Wall,East Michaelmouth,North Carolina,25929.0,001-375-937-1809x2251,destinyrivera@example,[25],0.0
+address,city,state,zip_code,email,original,source_ids,merge_score,first_name,middle_name,last_name,phone,_load_datetime
+847 Michael Vista Apartment 636,Popemouth,New York,13456,kimberly09@example.com,Y,"[np.int64(12), np.int64(7)]",1.0,,,,,
+17028 Ferguson Stravenue Suite 849,BLANK,Washington,12518,,Y,"[np.int64(11), np.int64(5)]",1.0,,,,,
+16462 Graham Plain,South Linda,South Carolina,64525,langkathryn@example.com,Y,"[np.int64(2), np.int64(10)]",1.0,,,,,
+546 Williams Points,Barbarabury,Oklahoma,28304,amybaker@example.org,,[1],0.0,Brent,Tina,Keith,420-401-2179x21684,2025-07-20 02:40:36
+82249 Hickman Haven,New Danielberg,Idaho,55847,richardrobert@example.net,,[3],0.0,Jose,Matthew,Jennings,798-675-8507x46574,2025-07-20 02:40:36
+758 Robert Cliff,Lake Frankside,New Hampshire,06678,woodwardkristin@example.org,,[4],0.0,Ryan,Katherine,Stephens,2156792243,2025-07-20 02:40:36
+0872 Pineda Crossing,Charlesview,Alabama,72234,jonathan09@example.com,,[6],0.0,Joan,Travis,Mejia,943.224.1442,2025-07-20 02:40:36
+847 Michael Vista Apartment 636,BLANK,Illinois,00000,,,[13],0.0,Will,D,Jimenez,567.368.4733x3098,2025-07-20 02:40:36
+83939 David Club,Jonesberg,Idaho,96741,montesbradley@example.org,,[15],0.0,Jason,Allison,Alvarez,+1-732-595-8502x427,2025-07-20 02:40:36
+61513 Hunt Forest Apt. 265,Farleyfort,North Carolina,04540,gvasquez@example.net,,[16],0.0,Tamara,Jennifer,Vance,(797)652-3978x48690,2025-07-20 02:40:36
+0598 Julia Loop,North Michellemouth,South Dakota,16524,goldenkatherine@example.net,,[17],0.0,Douglas,William,Dennis,+1-954-559-0911,2025-07-20 02:40:36
+952 Donna Meadow,New Cherylside,Missouri,55125,paul77@example.org,,[18],0.0,Michael,Michael,Riggs,375.594.2294x1733,2025-07-20 02:40:36
+3034 Lisa Inlet Suite 445,Cookborough,Nevada,60687,janetwilliams@example.org,,[19],0.0,Shaun,Rebecca,Hall,367.478.8132x966,2025-07-20 02:40:36
+57880 Watkins Roads Suite 382,Karabury,West Virginia,51820,hughescindy@example.net,,[20],0.0,Thomas,Michelle,Hart,(739)762-7263,2025-07-20 02:40:36
+138 Nicole Court Apt. 867,Skinnerton,Nebraska,75221,cory29@example.net,,[21],0.0,Christina,Clayton,Shaw,001-346-930-8135x911,2025-07-20 02:40:36
+83984 Cervantes Square,West Sabrina,West Virginia,06148,dward@example.com,,[22],0.0,Michael,Anna,Barr,893.571.4135x57419,2025-07-20 02:40:36
+349 Jerry Place Suite 284,West Frankport,Wisconsin,42550,russell10@example.net,,[23],0.0,Juan,Leah,Monroe,(206)234-0039x16228,2025-07-20 02:40:36
+9804 Keith Shoals Apt. 807,Newmanport,Wisconsin,81790,floresamber@example.org,,[24],0.0,Cody,Adam,Robinson,783.807.1089x912,2025-07-20 02:40:36
+872 Young Wall,East Michaelmouth,North Carolina,25929,destinyrivera@example,,[25],0.0,Dana,Claire,Mullins,001-375-937-1809x2251,2025-07-20 02:40:36

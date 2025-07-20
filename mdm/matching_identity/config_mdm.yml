@@ -1,0 +1,37 @@
+blocking:
+  columns:
+    - first_name
+    - last_name
+
+similarity:
+  - column: first_name
+    method: jarowinkler
+  - column: middle_name
+    method: jarowinkler
+  - column: last_name
+    method: jarowinkler
+  - column: address
+    method: levenshtein
+  - column: city
+    method: jarowinkler
+  - column: zip_code
+    method: exact
+
+thresholds:
+  auto_merge: 0.88
+  review: 0.7
+
+survivorship:
+  rules:
+    - column: original
+      strategy: prefer_Y
+    - column: address
+      strategy: longest_string
+    - column: city
+      strategy: mode
+    - column: state
+      strategy: mode
+    - column: zip_code
+      strategy: mode
+    - column: email
+      strategy: mode
