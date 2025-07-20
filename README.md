@@ -49,3 +49,14 @@ uv add pandas
 
 ### UV on Linux
  
+## DBT SQLITE
+
+Model contracts cannot be enforced by sqlite!
+
+```version: 2
+
+models:
+  - name: slvr_personal_info
+    config:
+      contract:
+        enforced: true```

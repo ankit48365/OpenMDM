@@ -33,7 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_store_cleanup:
-    +schema: dbt  # All models under this project will use the 'dbt' schema
+    # +schema: main  # All models under this project will use the 'dbt' schema
     # bronze:
     silver:
       +materialized: table
