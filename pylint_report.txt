@@ -115,7 +115,7 @@ def write_pairwise_summary(df, features, category, output_path):
     subset = features[features['match_category'] == category].reset_index()
 
     # Normalize pair direction (min/max)
-    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
+    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand') # pylint: disable=line-too-long
     subset = subset.drop_duplicates(subset=['id_min', 'id_max'])
 
     with open(output_path, 'a', encoding='utf-8') as f:
@@ -167,11 +167,15 @@ mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
     labels=['non_match', 'review', 'auto_merge']
 )
 
-# 6. Write summary function
+# 5.5. Write summary function: Provice a detailed summary
+# of paired records and in which category they fall
 def write_pairwise_summary(df, features, category, output_path):
     subset = features[features['match_category'] == category].reset_index()
-    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand') # pylint: disable=line-too-long
+
+    # Normalize pair direction (min/max)
+    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
     subset = subset.drop_duplicates(subset=['id_min', 'id_max'])
+
     with open(output_path, 'a', encoding='utf-8') as f:
         f.write(f'\n--- {category.upper()} RECORDS ---\n')
         for _, row in subset.iterrows():
@@ -186,21 +190,33 @@ def write_pairwise_summary(df, features, category, output_path):
 output_path = r'D:\mygit\OpenMDM\mdm\source_data\mdm_similarity_summary.txt'
 write_pairwise_summary(df, features, 'auto_merge', output_path)
 write_pairwise_summary(df, features, 'review', output_path)
+# write_pairwise_summary(df, features, 'non_match', output_path)
 
-# 7. Cluster auto_merge pairs
+# 5.6. 🎯 Cluster auto_merge pairs to remove reverse duplicates
 auto_merge_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
 auto_merge_pairs[['id_min', 'id_max']] = auto_merge_pairs[['record_id_1', 'record_id_2']].apply(
     sorted, axis=1, result_type='expand'
 )
 auto_merge_pairs = auto_merge_pairs.drop_duplicates(subset=['id_min', 'id_max'])
 
-# 8. Build clusters
+# 5.7. Clustering into Entity Groups Build a graph of link
+# pairs and extract connected components as clusters.
+# Build clusters using graph traversal
 G = nx.Graph()
 G.add_edges_from(auto_merge_pairs[['record_id_1', 'record_id_2']].values)
 clusters = list(nx.connected_components(G))
 
-# 9. Dynamic merge function with survivorship rules
-def merge_cluster(df, cluster, rules):
+#########################################################################
+# 6. Survivorship & Merge ###############################################
+#########################################################################
+# 6.1. Define Survivorship Rules, For each cluster, we’ll apply
+# field-level rules to build a “golden record.
+    # - Original record wins: prefer the row where Original == 'Y'.
+    # - Fallback by completeness:
+    # - Non-null > null
+    # - Longer strings (for address)
+    # - Mode (for city, state, email, zip)
+def merge_cluster(df, cluster):
     members = list(cluster)
     records = df.loc[members] (duplicate-code)
 mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
@@ -302,7 +318,7 @@ mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
     clean_record['merge_score'] = 0.0
     singleton_goldens.append(clean_record)
 
-# 11. Write non-matched single records
+
 with open(output_path, 'a', encoding='utf-8') as f:
     f.write('\n--- NON_MATCHED SINGLE RECORDS ---\n')
     for rid in singleton_ids:
@@ -311,8 +327,12 @@ with open(output_path, 'a', encoding='utf-8') as f:
         f.write(f"💡 Similarity Score: 0.0 | Match Category: non_match (singleton)\n")
         f.write('-' * 80 + '\n')
 
-# 12. Merge clusters and combine golden records
-unique_clusters = {frozenset(cluster) for cluster in clusters} (duplicate-code)
+
+# 6.3. Writing Golden Records with merged and singleton records
+
+# Convert each cluster to a frozenset and deduplicate
+unique_clusters = {frozenset(cluster) for cluster in clusters}
+# Proceed with merging only unique clusters (duplicate-code)
 
 -----------------------------------
 Your code has been rated at 6.64/10
