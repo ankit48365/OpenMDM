@@ -1,5 +1,6 @@
 ![pylint](https://img.shields.io/badge/pylint-5.00-red)
 ![CurrentLocal](https://img.shields.io/badge/machine-Latitude-brightgreen)
+![sqlfluff](https://img.shields.io/badge/sql%20violations-0-green)
 
 ## OpenMDM
 
