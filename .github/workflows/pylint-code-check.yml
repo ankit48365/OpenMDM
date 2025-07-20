@@ -1,4 +1,4 @@
-name: Pylint Code Quality Check
+name: Pylint sqlfluff Quality Check
 
 on:
   push:  # Trigger on every push to any branch
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  pylint:
+  pylint_sqlfluff:
 
     if: contains(github.event.head_commit.message, 'CheckCodeQuality')
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
 
 
       - name: Run SQLFluff linting
-        run: sqlfluff lint -v .mdm/dbt_store_cleanup/models > sqlfluff_report.txt || true
+        run: sqlfluff lint --dialect sqlite -v ./mdm/dbt_store_cleanup/models > sqlfluff_report.txt
         env:
           DBT_PROFILES_DIR: /home/runner/.dbt
           DBT_PROJECT_DIR: /home/runner/work/OpenMDM/OpenMDM/mdm/dbt_store_cleanup
