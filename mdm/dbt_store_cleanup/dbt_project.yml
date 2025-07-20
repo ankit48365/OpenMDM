@@ -12,6 +12,7 @@ profile: 'dbt_store_cleanup'
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
+# model-paths: ["models", "models/bronze", "models/silver"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -29,8 +30,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
 models:
   dbt_store_cleanup:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    +schema: dbt  # All models under this project will use the 'dbt' schema
+    # bronze:
+    silver:
+      +materialized: table

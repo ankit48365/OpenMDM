@@ -1,0 +1,53 @@
+version: 2
+
+sources:
+  - name: source_schema  # ← must match first argument in source()
+    schema: main         # ← for SQLite, usually 'main'
+    tables:
+      - name: personal_info
+        columns:
+          - name: first_name
+            data_type: text
+          - name: middle_name
+            data_type: text
+          - name: last_name
+            data_type: text
+          - name: address
+            data_type: text
+          - name: city
+            data_type: text
+          - name: state
+            data_type: text
+          - name: zip_code
+            data_type: text
+          - name: phone
+            data_type: text
+          - name: email
+            data_type: text
+          - name: original
+            data_type: text
+
+
+# sources:
+#   - name: main
+#     tables:
+#       - name: personal_info
+
+# models:
+#   - name: my_first_dbt_model
+#     description: "A starter dbt model"
+#     columns:
+#       - name: id
+#         description: "The primary key for this table"
+#         data_tests:
+#           - unique
+#           - not_null
+
+#   - name: my_second_dbt_model
+#     description: "A starter dbt model"
+#     columns:
+#       - name: id
+#         description: "The primary key for this table"
+#         data_tests:
+#           - unique
+#           - not_null
