@@ -1,6 +1,6 @@
-import pandas as pd
-import recordlinkage
-import networkx as nx
+import pandas as pd # pylint: disable=import-error
+import recordlinkage # pylint: disable=import-error
+import networkx as nx # pylint: disable=import-error
 import sqlite3
 
 # 1.0. Data Ingestion
@@ -36,13 +36,13 @@ compare.exact('zip_code', 'zip_code', label='zip_match')
 # compare.string('phone', 'phone', method='damerau_levenshtein', label='phone_sim')
 # compare.string('email', 'email', method='jarowinkler', label='email_sim')
 
-# 5.4. Classification & Thresholding Use a simple rule: 
+# 5.4. Classification & Thresholding Use a simple rule:
 # sum of normalized similarities above a threshold signals a match
 # Normalize exact match to 1/0, others range [0,1]
 features = compare.compute(candidate_pairs, df, df)
 features['score'] = (
     features['fn_sim'] + features['mn_sim'] + features['ln_sim'] +
-    features['addr_sim'] + features['city_sim'] + features['zip_match'] 
+    features['addr_sim'] + features['city_sim'] + features['zip_match']
     # + features['phone_sim'] + features['email_sim']
 ) / 6 # this is total fields being compared
 
@@ -52,13 +52,13 @@ features['match_category'] = pd.cut(
     labels=['non_match', 'review', 'auto_merge']
 )
 
-# 5.5. Write summary function: Provice a detailed summary 
+# 5.5. Write summary function: Provice a detailed summary
 # of paired records and in which category they fall
 def write_pairwise_summary(df, features, category, output_path):
     subset = features[features['match_category'] == category].reset_index()
 
     # Normalize pair direction (min/max)
-    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
+    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand') # pylint: disable=line-too-long 
     subset = subset.drop_duplicates(subset=['id_min', 'id_max'])
 
     with open(output_path, 'a', encoding='utf-8') as f:
@@ -84,7 +84,7 @@ auto_merge_pairs[['id_min', 'id_max']] = auto_merge_pairs[['record_id_1', 'recor
 )
 auto_merge_pairs = auto_merge_pairs.drop_duplicates(subset=['id_min', 'id_max'])
 
-# 5.7. Clustering into Entity Groups Build a graph of link 
+# 5.7. Clustering into Entity Groups Build a graph of link
 # pairs and extract connected components as clusters.
 # Build clusters using graph traversal
 G = nx.Graph()
@@ -94,7 +94,7 @@ clusters = list(nx.connected_components(G))
 #########################################################################
 # 6. Survivorship & Merge ###############################################
 #########################################################################
-# 6.1. Define Survivorship Rules, For each cluster, we’ll apply 
+# 6.1. Define Survivorship Rules, For each cluster, we’ll apply
 # field-level rules to build a “golden record.
     # - Original record wins: prefer the row where Original == 'Y'.
     # - Fallback by completeness:
@@ -124,7 +124,7 @@ def merge_cluster(df, cluster):
     merged['merge_score'] = 1.0
     return pd.Series(merged)
 
-# 6.2. This section handles singleton records that were not 
+# 6.2. This section handles singleton records that were not
 # part of any auto_merge clusters.
 # Identify all record IDs
 all_ids = set(df.index)
@@ -159,7 +159,7 @@ with open(output_path, 'a', encoding='utf-8') as f:
         f.write('-' * 80 + '\n')
 
 
-# 6.3. Writing Golden Records with merged and singleton records 
+# 6.3. Writing Golden Records with merged and singleton records
 
 # Convert each cluster to a frozenset and deduplicate
 unique_clusters = {frozenset(cluster) for cluster in clusters}

@@ -27,7 +27,7 @@ conn.close()
 indexer = recordlinkage.Index()
 indexer.block(blocking_columns)
 candidate_pairs = indexer.index(df, df)
-candidate_pairs = candidate_pairs[candidate_pairs.get_level_values(0) != candidate_pairs.get_level_values(1)]
+candidate_pairs = candidate_pairs[candidate_pairs.get_level_values(0) != candidate_pairs.get_level_values(1)] # pylint: disable=line-too-long
 print(f"🧮 Total candidate pairs after blocking: {len(candidate_pairs)}")
 
 # 3. Pairwise similarity
@@ -43,7 +43,7 @@ for sim in similarity_configs:
 features = compare.compute(candidate_pairs, df, df)
 
 # 4. Calculate score
-similarity_labels = [f"{sim['column']}_{'match' if sim['method'] == 'exact' else 'sim'}" for sim in similarity_configs]
+similarity_labels = [f"{sim['column']}_{'match' if sim['method'] == 'exact' else 'sim'}" for sim in similarity_configs] # pylint: disable=line-too-long
 features['score'] = features[similarity_labels].mean(axis=1)
 
 # 5. Categorize based on thresholds
@@ -56,7 +56,7 @@ features['match_category'] = pd.cut(
 # 6. Write summary function
 def write_pairwise_summary(df, features, category, output_path):
     subset = features[features['match_category'] == category].reset_index()
-    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
+    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand') # pylint: disable=line-too-long
     subset = subset.drop_duplicates(subset=['id_min', 'id_max'])
     with open(output_path, 'a', encoding='utf-8') as f:
         f.write(f'\n--- {category.upper()} RECORDS ---\n')
@@ -95,11 +95,11 @@ def merge_cluster(df, cluster, rules):
             strategy = rules[col]
             if strategy == 'prefer_Y':
                 preferred = records[records['original'] == 'Y'][col].dropna()
-                val = preferred.iloc[0] if not preferred.empty else records[col].dropna().iloc[0] if not records[col].dropna().empty else None
+                val = preferred.iloc[0] if not preferred.empty else records[col].dropna().iloc[0] if not records[col].dropna().empty else None # pylint: disable=line-too-long
             elif strategy == 'longest_string':
                 val = max(records[col].dropna(), key=len, default=None)
             elif strategy == 'mode':
-                val = Counter(records[col].dropna()).most_common(1)[0][0] if not records[col].dropna().empty else None
+                val = Counter(records[col].dropna()).most_common(1)[0][0] if not records[col].dropna().empty else None # pylint: disable=line-too-long
             else:
                 val = None
             merged[col] = str(val).strip() if pd.notnull(val) else None
@@ -117,7 +117,7 @@ singleton_ids = sorted(all_ids - clustered_ids - review_ids)
 singleton_goldens = []
 for rid in singleton_ids:
     record = df.loc[rid].copy()
-    clean_record = {col: str(record[col]).strip() if pd.notnull(record[col]) else None for col in df.columns if col != 'original'}
+    clean_record = {col: str(record[col]).strip() if pd.notnull(record[col]) else None for col in df.columns if col != 'original'} # pylint: disable=line-too-long
     clean_record['source_ids'] = [rid]
     clean_record['merge_score'] = 0.0
     singleton_goldens.append(clean_record)
@@ -133,7 +133,8 @@ with open(output_path, 'a', encoding='utf-8') as f:
 
 # 12. Merge clusters and combine golden records
 unique_clusters = {frozenset(cluster) for cluster in clusters}
-golden_clusters = [merge_cluster(df, list(cluster), survivorship_rules) for cluster in unique_clusters]
+golden_clusters = [merge_cluster(df, list(cluster), survivorship_rules) for cluster in unique_clusters] # pylint: disable=line-too-long
 singleton_goldens_series = [pd.Series(rec) for rec in singleton_goldens]
 golden_df = pd.DataFrame(golden_clusters + singleton_goldens_series)
+# golden_df = pd.DataFrame(golden_clusters + singleton_goldens)
 golden_df.to_csv(r'D:\mygit\OpenMDM\mdm\source_data\golden_auto_records.csv', index=False)
