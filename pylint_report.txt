@@ -1,7 +1,326 @@
-************* Module ingestion.main
-mdm/ingestion/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-mdm/ingestion/main.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module matching_identity.mdm_operations
+mdm/matching_identity/mdm_operations.py:22:0: C0301: Line too long (109/100) (line-too-long)
+mdm/matching_identity/mdm_operations.py:36:55: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:42:71: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:52:57: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:58:0: C0301: Line too long (117/100) (line-too-long)
+mdm/matching_identity/mdm_operations.py:84:58: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:94:63: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:124:59: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:159:63: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations.py:168:0: C0304: Final newline missing (missing-final-newline)
+mdm/matching_identity/mdm_operations.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+mdm/matching_identity/mdm_operations.py:1:0: E0401: Unable to import 'pandas' (import-error)
+mdm/matching_identity/mdm_operations.py:2:0: E0401: Unable to import 'recordlinkage' (import-error)
+mdm/matching_identity/mdm_operations.py:3:0: E0401: Unable to import 'networkx' (import-error)
+mdm/matching_identity/mdm_operations.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+mdm/matching_identity/mdm_operations.py:54:27: W0621: Redefining name 'df' from outer scope (line 14) (redefined-outer-name)
+mdm/matching_identity/mdm_operations.py:54:31: W0621: Redefining name 'features' from outer scope (line 39) (redefined-outer-name)
+mdm/matching_identity/mdm_operations.py:54:51: W0621: Redefining name 'output_path' from outer scope (line 72) (redefined-outer-name)
+mdm/matching_identity/mdm_operations.py:61:53: W0621: Redefining name 'f' from outer scope (line 150) (redefined-outer-name)
+mdm/matching_identity/mdm_operations.py:72:0: C0103: Constant name "output_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+mdm/matching_identity/mdm_operations.py:101:0: C0116: Missing function or method docstring (missing-function-docstring)
+mdm/matching_identity/mdm_operations.py:101:18: W0621: Redefining name 'df' from outer scope (line 14) (redefined-outer-name)
+mdm/matching_identity/mdm_operations.py:155:16: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+************* Module matching_identity.mdm_operations_sqlite
+mdm/matching_identity/mdm_operations_sqlite.py:25:0: C0301: Line too long (109/100) (line-too-long)
+mdm/matching_identity/mdm_operations_sqlite.py:39:55: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:45:71: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:55:57: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:61:0: C0301: Line too long (117/100) (line-too-long)
+mdm/matching_identity/mdm_operations_sqlite.py:87:58: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:97:63: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:127:59: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:162:63: C0303: Trailing whitespace (trailing-whitespace)
+mdm/matching_identity/mdm_operations_sqlite.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+mdm/matching_identity/mdm_operations_sqlite.py:1:0: E0401: Unable to import 'pandas' (import-error)
+mdm/matching_identity/mdm_operations_sqlite.py:2:0: E0401: Unable to import 'recordlinkage' (import-error)
+mdm/matching_identity/mdm_operations_sqlite.py:3:0: E0401: Unable to import 'networkx' (import-error)
+mdm/matching_identity/mdm_operations_sqlite.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+mdm/matching_identity/mdm_operations_sqlite.py:57:27: W0621: Redefining name 'df' from outer scope (line 17) (redefined-outer-name)
+mdm/matching_identity/mdm_operations_sqlite.py:57:31: W0621: Redefining name 'features' from outer scope (line 42) (redefined-outer-name)
+mdm/matching_identity/mdm_operations_sqlite.py:57:51: W0621: Redefining name 'output_path' from outer scope (line 75) (redefined-outer-name)
+mdm/matching_identity/mdm_operations_sqlite.py:64:53: W0621: Redefining name 'f' from outer scope (line 153) (redefined-outer-name)
+mdm/matching_identity/mdm_operations_sqlite.py:75:0: C0103: Constant name "output_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+mdm/matching_identity/mdm_operations_sqlite.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
+mdm/matching_identity/mdm_operations_sqlite.py:104:18: W0621: Redefining name 'df' from outer scope (line 17) (redefined-outer-name)
+mdm/matching_identity/mdm_operations_sqlite.py:158:16: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+mdm/matching_identity/mdm_operations_sqlite.py:4:0: C0411: standard import "sqlite3" should be placed before third party imports "pandas", "recordlinkage", "networkx" (wrong-import-order)
+************* Module matching_identity.mdm_dynamic
+mdm/matching_identity/mdm_dynamic.py:30:0: C0301: Line too long (109/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:46:0: C0301: Line too long (119/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:59:0: C0301: Line too long (117/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:98:0: C0301: Line too long (142/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:102:0: C0301: Line too long (118/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:120:0: C0301: Line too long (130/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:136:0: C0301: Line too long (103/100) (line-too-long)
+mdm/matching_identity/mdm_dynamic.py:139:0: C0304: Final newline missing (missing-final-newline)
+mdm/matching_identity/mdm_dynamic.py:2:0: E0401: Unable to import 'pandas' (import-error)
+mdm/matching_identity/mdm_dynamic.py:3:0: E0401: Unable to import 'recordlinkage' (import-error)
+mdm/matching_identity/mdm_dynamic.py:4:0: E0401: Unable to import 'networkx' (import-error)
+mdm/matching_identity/mdm_dynamic.py:6:0: E0401: Unable to import 'yaml' (import-error)
+mdm/matching_identity/mdm_dynamic.py:10:5: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+mdm/matching_identity/mdm_dynamic.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+mdm/matching_identity/mdm_dynamic.py:57:27: W0621: Redefining name 'df' from outer scope (line 21) (redefined-outer-name)
+mdm/matching_identity/mdm_dynamic.py:57:31: W0621: Redefining name 'features' from outer scope (line 43) (redefined-outer-name)
+mdm/matching_identity/mdm_dynamic.py:57:51: W0621: Redefining name 'output_path' from outer scope (line 72) (redefined-outer-name)
+mdm/matching_identity/mdm_dynamic.py:61:53: W0621: Redefining name 'f' from outer scope (line 126) (redefined-outer-name)
+mdm/matching_identity/mdm_dynamic.py:72:0: C0103: Constant name "output_path" doesn't conform to UPPER_CASE naming style (invalid-name)
+mdm/matching_identity/mdm_dynamic.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
+mdm/matching_identity/mdm_dynamic.py:89:18: W0621: Redefining name 'df' from outer scope (line 21) (redefined-outer-name)
+mdm/matching_identity/mdm_dynamic.py:131:16: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+mdm/matching_identity/mdm_dynamic.py:5:0: C0411: standard import "sqlite3" should be placed before third party imports "pandas", "recordlinkage", "networkx" (wrong-import-order)
+mdm/matching_identity/mdm_dynamic.py:7:0: C0411: standard import "collections.Counter" should be placed before third party imports "pandas", "recordlinkage", "networkx", "yaml" (wrong-import-order)
+************* Module file_to_db.check_dbt_etl_dev_models
+mdm/file_to_db/check_dbt_etl_dev_models.py:37:0: C0304: Final newline missing (missing-final-newline)
+mdm/file_to_db/check_dbt_etl_dev_models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+mdm/file_to_db/check_dbt_etl_dev_models.py:12:0: E0401: Unable to import 'tabulate' (import-error)
+mdm/file_to_db/check_dbt_etl_dev_models.py:12:0: C0413: Import "from tabulate import tabulate" should be placed at the top of the module (wrong-import-position)
+mdm/file_to_db/check_dbt_etl_dev_models.py:2:0: W0611: Unused import csv (unused-import)
+************* Module file_to_db.check_src_dbt_etl_dev
+mdm/file_to_db/check_src_dbt_etl_dev.py:14:0: C0304: Final newline missing (missing-final-newline)
+mdm/file_to_db/check_src_dbt_etl_dev.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module file_to_db.csv_to_sqlite
+mdm/file_to_db/csv_to_sqlite.py:29:0: C0301: Line too long (103/100) (line-too-long)
+mdm/file_to_db/csv_to_sqlite.py:31:0: C0301: Line too long (123/100) (line-too-long)
+mdm/file_to_db/csv_to_sqlite.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+mdm/file_to_db/csv_to_sqlite.py:40:0: E0401: Unable to import 'tabulate' (import-error)
+mdm/file_to_db/csv_to_sqlite.py:40:0: C0413: Import "from tabulate import tabulate" should be placed at the top of the module (wrong-import-position)
+mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
+==matching_identity.mdm_operations:[14:103]
+==matching_identity.mdm_operations_sqlite:[17:106]
+df.reset_index(drop=True, inplace=True)
+df.index.name = 'record_id'
+
+# 5.2. Blocking
+indexer = recordlinkage.Index()
+indexer.block(['last_name', 'zip_code'])
+candidate_pairs = indexer.index(df, df)
+candidate_pairs = candidate_pairs[candidate_pairs.get_level_values(0) != candidate_pairs.get_level_values(1)]
+print(f"🧮 Total candidate pairs after blocking: {len(candidate_pairs)}")
+
+# 5.3. Pairwise similarity
+compare = recordlinkage.Compare()
+compare.string('first_name', 'first_name', method='jarowinkler', label='fn_sim')
+compare.string('middle_name', 'middle_name', method='jarowinkler', label='mn_sim')
+compare.string('last_name', 'last_name', method='jarowinkler', label='ln_sim')
+compare.string('address', 'address', method='levenshtein', label='addr_sim')
+compare.string('city', 'city', method='jarowinkler', label='city_sim')
+compare.exact('zip_code', 'zip_code', label='zip_match')
+# compare.string('phone', 'phone', method='damerau_levenshtein', label='phone_sim')
+# compare.string('email', 'email', method='jarowinkler', label='email_sim')
+
+# 5.4. Classification & Thresholding Use a simple rule:
+# sum of normalized similarities above a threshold signals a match
+# Normalize exact match to 1/0, others range [0,1]
+features = compare.compute(candidate_pairs, df, df)
+features['score'] = (
+    features['fn_sim'] + features['mn_sim'] + features['ln_sim'] +
+    features['addr_sim'] + features['city_sim'] + features['zip_match']
+    # + features['phone_sim'] + features['email_sim']
+) / 6 # this is total fields being compared
+
+features['match_category'] = pd.cut(
+    features['score'],
+    bins=[0, 0.7, 0.88, 1.0],
+    labels=['non_match', 'review', 'auto_merge']
+)
+
+# 5.5. Write summary function: Provice a detailed summary
+# of paired records and in which category they fall
+def write_pairwise_summary(df, features, category, output_path):
+    subset = features[features['match_category'] == category].reset_index()
+
+    # Normalize pair direction (min/max)
+    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
+    subset = subset.drop_duplicates(subset=['id_min', 'id_max'])
+
+    with open(output_path, 'a', encoding='utf-8') as f:
+        f.write(f'\n--- {category.upper()} RECORDS ---\n')
+        for _, row in subset.iterrows():
+            id1, id2 = row['record_id_1'], row['record_id_2']
+            rec1 = df.loc[id1].to_dict()
+            rec2 = df.loc[id2].to_dict()
+            f.write(f"🔹 Record 1 ({id1}): {rec1}\n")
+            f.write(f"🔸 Record 2 ({id2}): {rec2}\n")
+            f.write(f"💡 Similarity Score: {round(row['score'], 4)} | Match Category: {category}\n")
+            f.write('-' * 80 + '\n')
+
+output_path = r'D:\mygit\OpenMDM\mdm\source_data\mdm_similarity_summary.txt'
+write_pairwise_summary(df, features, 'auto_merge', output_path)
+write_pairwise_summary(df, features, 'review', output_path)
+# write_pairwise_summary(df, features, 'non_match', output_path)
+
+# 5.6. 🎯 Cluster auto_merge pairs to remove reverse duplicates
+auto_merge_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
+auto_merge_pairs[['id_min', 'id_max']] = auto_merge_pairs[['record_id_1', 'record_id_2']].apply(
+    sorted, axis=1, result_type='expand'
+)
+auto_merge_pairs = auto_merge_pairs.drop_duplicates(subset=['id_min', 'id_max'])
+
+# 5.7. Clustering into Entity Groups Build a graph of link
+# pairs and extract connected components as clusters.
+# Build clusters using graph traversal
+G = nx.Graph()
+G.add_edges_from(auto_merge_pairs[['record_id_1', 'record_id_2']].values)
+clusters = list(nx.connected_components(G))
+
+#########################################################################
+# 6. Survivorship & Merge ###############################################
+#########################################################################
+# 6.1. Define Survivorship Rules, For each cluster, we’ll apply
+# field-level rules to build a “golden record.
+    # - Original record wins: prefer the row where Original == 'Y'.
+    # - Fallback by completeness:
+    # - Non-null > null
+    # - Longer strings (for address)
+    # - Mode (for city, state, email, zip)
+def merge_cluster(df, cluster):
+    members = list(cluster)
+    records = df.loc[members] (duplicate-code)
+mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
+==matching_identity.mdm_dynamic:[52:91]
+==matching_identity.mdm_operations:[48:103]
+    labels=['non_match', 'review', 'auto_merge']
+)
+
+# 6. Write summary function
+def write_pairwise_summary(df, features, category, output_path):
+    subset = features[features['match_category'] == category].reset_index()
+    subset[['id_min', 'id_max']] = subset[['record_id_1', 'record_id_2']].apply(sorted, axis=1, result_type='expand')
+    subset = subset.drop_duplicates(subset=['id_min', 'id_max'])
+    with open(output_path, 'a', encoding='utf-8') as f:
+        f.write(f'\n--- {category.upper()} RECORDS ---\n')
+        for _, row in subset.iterrows():
+            id1, id2 = row['record_id_1'], row['record_id_2']
+            rec1 = df.loc[id1].to_dict()
+            rec2 = df.loc[id2].to_dict()
+            f.write(f"🔹 Record 1 ({id1}): {rec1}\n")
+            f.write(f"🔸 Record 2 ({id2}): {rec2}\n")
+            f.write(f"💡 Similarity Score: {round(row['score'], 4)} | Match Category: {category}\n")
+            f.write('-' * 80 + '\n')
+
+output_path = r'D:\mygit\OpenMDM\mdm\source_data\mdm_similarity_summary.txt'
+write_pairwise_summary(df, features, 'auto_merge', output_path)
+write_pairwise_summary(df, features, 'review', output_path)
+
+# 7. Cluster auto_merge pairs
+auto_merge_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
+auto_merge_pairs[['id_min', 'id_max']] = auto_merge_pairs[['record_id_1', 'record_id_2']].apply(
+    sorted, axis=1, result_type='expand'
+)
+auto_merge_pairs = auto_merge_pairs.drop_duplicates(subset=['id_min', 'id_max'])
+
+# 8. Build clusters
+G = nx.Graph()
+G.add_edges_from(auto_merge_pairs[['record_id_1', 'record_id_2']].values)
+clusters = list(nx.connected_components(G))
+
+# 9. Dynamic merge function with survivorship rules
+def merge_cluster(df, cluster, rules):
+    members = list(cluster)
+    records = df.loc[members] (duplicate-code)
+mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
+==matching_identity.mdm_operations:[109:143]
+==matching_identity.mdm_operations_sqlite:[112:146]
+            continue
+        val = (
+            preferred[col].dropna().iloc[0]
+            if not preferred[col].dropna().empty
+            else fallback[col].dropna().iloc[0]
+            if not fallback[col].dropna().empty
+            else None
+        )
+        merged[col] = str(val).strip() if pd.notnull(val) else None
+
+    merged['source_ids'] = members
+    merged['merge_score'] = 1.0
+    return pd.Series(merged)
+
+# 6.2. This section handles singleton records that were not
+# part of any auto_merge clusters.
+# Identify all record IDs
+all_ids = set(df.index)
+# Get all clustered record IDs from auto_merge clusters
+clustered_ids = set().union(*clusters)
+
+review_pairs = features[features['match_category'] == 'review'].reset_index()
+review_ids = set(review_pairs['record_id_1']) | set(review_pairs['record_id_2'])
+
+# Identify singleton records: those not involved in any auto_merge cluster
+singleton_ids = sorted(all_ids - clustered_ids - review_ids)
+# singleton_ids = sorted(all_ids - clustered_ids)
+
+
+singleton_goldens = []
+
+for rid in singleton_ids:
+    record = df.loc[rid].copy()
+    clean_record = {col: str(record[col]).strip() if pd.notnull(record[col]) else None (duplicate-code)
+mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
+==matching_identity.mdm_operations:[144:168]
+==matching_identity.mdm_operations_sqlite:[147:171]
+    clean_record['source_ids'] = [rid]
+    clean_record['merge_score'] = 0.0
+    singleton_goldens.append(clean_record)
+
+
+with open(output_path, 'a', encoding='utf-8') as f:
+    f.write('\n--- NON_MATCHED SINGLE RECORDS ---\n')
+    for rid in singleton_ids:
+        rec = df.loc[rid].to_dict()
+        f.write(f"🧍 Record ({rid}): {rec}\n")
+        f.write(f"💡 Similarity Score: 0.0 | Match Category: non_match (singleton)\n")
+        f.write('-' * 80 + '\n')
+
+
+# 6.3. Writing Golden Records with merged and singleton records
+
+# Convert each cluster to a frozenset and deduplicate
+unique_clusters = {frozenset(cluster) for cluster in clusters}
+# Proceed with merging only unique clusters
+golden_clusters = [merge_cluster(df, list(cluster)) for cluster in unique_clusters]
+
+singleton_goldens_series = [pd.Series(rec) for rec in singleton_goldens]
+golden_df = pd.DataFrame(golden_clusters + singleton_goldens_series)
+golden_df.to_csv(r'D:\mygit\OpenMDM\mdm\source_data\golden_auto_records.csv', index=False) (duplicate-code)
+mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
+==matching_identity.mdm_dynamic:[104:119]
+==matching_identity.mdm_operations:[117:142]
+            merged[col] = str(val).strip() if pd.notnull(val) else None
+    merged['source_ids'] = members
+    merged['merge_score'] = 1.0
+    return pd.Series(merged)
+
+# 10. Handle singletons
+all_ids = set(df.index)
+clustered_ids = set().union(*clusters)
+review_pairs = features[features['match_category'] == 'review'].reset_index()
+review_ids = set(review_pairs['record_id_1']) | set(review_pairs['record_id_2'])
+singleton_ids = sorted(all_ids - clustered_ids - review_ids)
+
+singleton_goldens = []
+for rid in singleton_ids:
+    record = df.loc[rid].copy() (duplicate-code)
+mdm/file_to_db/csv_to_sqlite.py:1:0: R0801: Similar lines in 2 files
+==matching_identity.mdm_dynamic:[120:135]
+==matching_identity.mdm_operations:[144:163]
+    clean_record['source_ids'] = [rid]
+    clean_record['merge_score'] = 0.0
+    singleton_goldens.append(clean_record)
+
+# 11. Write non-matched single records
+with open(output_path, 'a', encoding='utf-8') as f:
+    f.write('\n--- NON_MATCHED SINGLE RECORDS ---\n')
+    for rid in singleton_ids:
+        rec = df.loc[rid].to_dict()
+        f.write(f"🧍 Record ({rid}): {rec}\n")
+        f.write(f"💡 Similarity Score: 0.0 | Match Category: non_match (singleton)\n")
+        f.write('-' * 80 + '\n')
+
+# 12. Merge clusters and combine golden records
+unique_clusters = {frozenset(cluster) for cluster in clusters} (duplicate-code)
 
 -----------------------------------
-Your code has been rated at 5.00/10
+Your code has been rated at 5.72/10
 
