@@ -25,7 +25,11 @@ sources:
           - name: email
             data_type: text
           - name: original
-            data_type: text
+            data_type: number
+          - name: COMDL
+            data_type: number
+          - name: REAL
+            data_type: number
 
 
 # sources:

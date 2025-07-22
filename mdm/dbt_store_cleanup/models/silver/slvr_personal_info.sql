@@ -47,9 +47,18 @@ SELECT
     END AS email,
     
     CASE 
-        WHEN original IS NULL OR original = '' THEN '-' 
+        WHEN original IS NULL OR original = '' THEN '0' 
         ELSE original 
     END AS original,
+
+    CASE 
+        WHEN COMDL IS NULL OR COMDL = '' THEN '0' 
+        ELSE COMDL 
+    END AS COMDL,
+    CASE 
+        WHEN REAL IS NULL OR REAL = '' THEN '0' 
+        ELSE REAL 
+    END AS REAL,
     
     datetime('now') AS _load_datetime
 FROM 

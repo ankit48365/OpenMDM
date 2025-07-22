@@ -1,0 +1,51 @@
+
+--- AUTO_MERGE RECORDS ---
+🔹 Record 1 (0): {'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'phillips', 'address': '053 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': 1, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+🔸 Record 2 (1): {'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'phillips', 'address': '054 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+💡 Similarity Score: 0.8128 | Match Category: auto_merge
+🏆 Trusted Record: 1
+--------------------------------------------------------------------------------
+🔹 Record 1 (1): {'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'phillips', 'address': '054 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+🔸 Record 2 (2): {'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'phillips', 'address': '054 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'mwest@example.net', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+💡 Similarity Score: 0.9091 | Match Category: auto_merge
+🏆 Trusted Record: None (no priority match)
+--------------------------------------------------------------------------------
+🔹 Record 1 (3): {'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'keith', 'address': '546 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+🔸 Record 2 (4): {'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'keith', 'address': '547 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 0, 'COMDL': 0, 'REAL': 1, '_load_datetime': '2025-07-22 02:50:32'}
+💡 Similarity Score: 0.9043 | Match Category: auto_merge
+🏆 Trusted Record: 4
+--------------------------------------------------------------------------------
+🔹 Record 1 (3): {'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'keith', 'address': '546 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+🔸 Record 2 (5): {'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'keith', 'address': '548 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': 'BLANK', 'email': 'amybaker@example.org', 'original': 1, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+💡 Similarity Score: 0.8134 | Match Category: auto_merge
+🏆 Trusted Record: 5
+--------------------------------------------------------------------------------
+
+--- REVIEW RECORDS ---
+🔹 Record 1 (0): {'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'phillips', 'address': '053 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': 1, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+🔸 Record 2 (2): {'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'phillips', 'address': '054 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'mwest@example.net', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+💡 Similarity Score: 0.7219 | Match Category: review
+🏆 Trusted Record: None (no priority match)
+--------------------------------------------------------------------------------
+🔹 Record 1 (4): {'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'keith', 'address': '547 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 0, 'COMDL': 0, 'REAL': 1, '_load_datetime': '2025-07-22 02:50:32'}
+🔸 Record 2 (5): {'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'keith', 'address': '548 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': 'BLANK', 'email': 'amybaker@example.org', 'original': 1, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+💡 Similarity Score: 0.7225 | Match Category: review
+🏆 Trusted Record: 5
+--------------------------------------------------------------------------------
+
+--- SINGLE RECORDS ---
+🔶 Single Record (6):
+{'first_name': 'krista', 'middle_name': 'Anna', 'last_name': 'leonard', 'address': '16462 Graham Plain', 'city': 'South Linda', 'state': 'South Carolina', 'zip_code': '64525', 'phone': '+1-232-755-1627x4205', 'email': 'langkathryn@example.com', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+Source Record: 6
+Trusted Record: 6
+--------------------------------------------------------------------------------
+🔶 Single Record (7):
+{'first_name': 'jose', 'middle_name': 'Matthew', 'last_name': 'jennings', 'address': '82249 Hickman Haven', 'city': 'New Danielberg', 'state': 'Idaho', 'zip_code': '55847', 'phone': '798-675-8507x46574', 'email': 'richardrobert@example.net', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 02:50:32'}
+Source Record: 7
+Trusted Record: 7
+--------------------------------------------------------------------------------
+🔶 Single Record (8):
+{'first_name': 'ryan', 'middle_name': 'Katherine', 'last_name': 'stephens', 'address': '758 Robert Cliff', 'city': 'Lake Frankside', 'state': 'New Hampshire', 'zip_code': '06678', 'phone': '2156792243', 'email': 'woodwardkristin@example.org', 'original': 0, 'COMDL': 0, 'REAL': 1, '_load_datetime': '2025-07-22 02:50:32'}
+Source Record: 8
+Trusted Record: 8
+--------------------------------------------------------------------------------

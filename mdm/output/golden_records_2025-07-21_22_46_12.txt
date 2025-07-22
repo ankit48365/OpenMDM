@@ -1,0 +1,31 @@
+--- GOLDEN RECORDS ---
+🔶 Golden Record for Cluster 1 (Records: 0, 1):
+{'first_name': 'valerie', 'middle_name': 'Jessica', 'last_name': 'Phillip', 'address': '054 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'mwest@example.net', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 00:23:04'}
+Source Records: 0, 1
+Trusted Record: 1
+--------------------------------------------------------------------------------
+🔶 Golden Record for Cluster 2 (Records: 2, 3, 4):
+{'first_name': 'brent', 'middle_name': 'Tina', 'last_name': 'Keit', 'address': '548 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 1, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 00:23:04'}
+Source Records: 2, 3, 4
+Trusted Record: 4
+--------------------------------------------------------------------------------
+🔶 Golden Record for Cluster 3 (Records: 8):
+{'first_name': 'valerie', 'middle_name': 'Aaron', 'last_name': 'Johns', 'address': '17028 Ferguson Stravenue Suite 849', 'city': 'Lake Stevenfurt', 'state': 'Washington', 'zip_code': '12518', 'phone': '5887466316', 'email': 'stacysnyder@example.net', 'original': 0, 'COMDL': 1, 'REAL': 1, '_load_datetime': '2025-07-22 00:23:04'}
+Source Records: 8
+Trusted Record: 8
+--------------------------------------------------------------------------------
+🔶 Golden Record for Cluster 4 (Records: 5):
+{'first_name': 'krista', 'middle_name': 'Anna', 'last_name': 'Leonard', 'address': '16462 Graham Plain', 'city': 'South Linda', 'state': 'South Carolina', 'zip_code': '64525', 'phone': '+1-232-755-1627x4205', 'email': 'langkathryn@example.com', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-22 00:23:04'}
+Source Records: 5
+Trusted Record: 5
+--------------------------------------------------------------------------------
+🔶 Golden Record for Cluster 5 (Records: 6):
+{'first_name': 'jose', 'middle_name': 'Matthew', 'last_name': 'Jennings', 'address': '82249 Hickman Haven', 'city': 'New Danielberg', 'state': 'Idaho', 'zip_code': '55847', 'phone': '798-675-8507x46574', 'email': 'richardrobert@example.net', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-22 00:23:04'}
+Source Records: 6
+Trusted Record: 6
+--------------------------------------------------------------------------------
+🔶 Golden Record for Cluster 6 (Records: 7):
+{'first_name': 'ryan', 'middle_name': 'Katherine', 'last_name': 'Stephens', 'address': '758 Robert Cliff', 'city': 'Lake Frankside', 'state': 'New Hampshire', 'zip_code': '06678', 'phone': '2156792243', 'email': 'woodwardkristin@example.org', 'original': 0, 'COMDL': 0, 'REAL': 1, '_load_datetime': '2025-07-22 00:23:04'}
+Source Records: 7
+Trusted Record: 7
+--------------------------------------------------------------------------------
