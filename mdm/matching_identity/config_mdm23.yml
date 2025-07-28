@@ -32,6 +32,7 @@ thresholds:
 survivorship:
   rules:
     - column: CreatedON
+      strategy: most_recent
 
 priority_rule:
   conditions:

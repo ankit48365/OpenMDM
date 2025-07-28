@@ -25,6 +25,8 @@ blocking_columns = config['blocking']['columns']
 similarity_configs = config['similarity']
 thresholds = config['thresholds']
 survivorship_rules = {rule['column']: rule['strategy'] for rule in config['survivorship']['rules']}
+# date_column = yaml_config['survivorship']['rules'][0]['column']
+
 priority_rule = config['priority_rule']
 date_column = config['survivorship']['rules'][0]['column']
 
@@ -195,6 +197,9 @@ def create_golden_record(df, record_ids, survivorship_rules, priority_conditions
     trusted_id = apply_priority_rule(df, record_ids, priority_conditions) if len(record_ids) > 1 else record_ids[0]
     golden = {}
     
+    # Get the date column from survivorship_rules where strategy is 'most_recent'
+    date_column = next((col for col, strategy in survivorship_rules.items() if strategy == 'most_recent'), None)
+    
     if trusted_id:
         return df.loc[trusted_id].to_dict(), trusted_id
     
@@ -203,8 +208,8 @@ def create_golden_record(df, record_ids, survivorship_rules, priority_conditions
         non_null_values = [v for v in values if pd.notna(v)]
         
         if non_null_values:
-            if column == 'createdON':
-                dates = [pd.to_datetime(df.loc[rid]['createdON']) if pd.notna(df.loc[rid]['createdON']) else pd.Timestamp.min for rid in record_ids]
+            if date_column and column.lower() == date_column.lower():
+                dates = [pd.to_datetime(df.loc[rid][column]) if pd.notna(df.loc[rid][column]) else pd.Timestamp.min for rid in record_ids]
                 max_date_idx = dates.index(max(dates))
                 golden[column] = values[max_date_idx]
             else:
