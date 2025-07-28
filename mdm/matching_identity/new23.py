@@ -26,6 +26,7 @@ similarity_configs = config['similarity']
 thresholds = config['thresholds']
 survivorship_rules = {rule['column']: rule['strategy'] for rule in config['survivorship']['rules']}
 priority_rule = config['priority_rule']
+date_column = config['survivorship']['rules'][0]['column']
 
 # Validate priority_rule
 if not priority_rule or 'conditions' not in priority_rule:

@@ -1,6 +1,6 @@
 --- GOLDEN RECORDS ---
 🔶 Golden Record for Cluster 1 (Records: 0, 1, 2):
-{'first_name': 'Valerie', 'middle_name': 'Jessica', 'last_name': 'Phillips', 'address': '054 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': np.int64(0), 'COMDL': np.int64(1), 'REAL': np.int64(0), '_load_datetime': '2025-07-22 02:50:32'}
+{'first_name': 'Valerie', 'middle_name': 'Jessica', 'last_name': 'Phillips', 'address': '053 Hopkins Ports', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': np.int64(1), 'COMDL': np.int64(0), 'REAL': np.int64(0), '_load_datetime': '2025-07-22 02:50:32'}
 Source Records: 0, 1, 2
 Trusted Record: None (survivorship applied)
 --------------------------------------------------------------------------------
