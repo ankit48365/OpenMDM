@@ -20,21 +20,22 @@ CREATE TABLE personal_info (
     zip_code TEXT,
     phone TEXT,
     email TEXT,
-    original TEXT
+    original INTEGER,
+    COMDL INTEGER,
+    REAL INTEGER
 )
 ''')
 
 
-
-with open(r'D:\mygit\OpenMDM\mdm\source_data\Data_Set_1.csv', newline='', encoding='utf-8') as csvfile:
+with open(r'D:\mygit\OpenMDM\mdm\source_data\Data_Set_2.csv', newline='', encoding='utf-8') as csvfile:
 
     reader = csv.DictReader(csvfile) # Using DictReader for field by column names and fill missing values with empty string
     for row in reader:
         values = [row.get(col, '') for col in [
             'first_name', 'middle_name', 'last_name', 'address', 'city',
-            'state', 'zip_code', 'phone', 'email', 'original'
+            'state', 'zip_code', 'phone', 'email', 'original', 'COMDL', 'REAL'
         ]]
-        cursor.execute('INSERT INTO personal_info VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', values)
+        cursor.execute('INSERT INTO personal_info VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', values)
 
 
 from tabulate import tabulate

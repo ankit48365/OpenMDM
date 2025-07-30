@@ -1,0 +1,58 @@
+blocking:
+  columns:
+    - first_name
+    - zip_code
+
+similarity:
+  - column: first_name
+    method: jarowinkler
+  - column: middle_name
+    method: jarowinkler
+  - column: last_name
+    method: jarowinkler
+  - column: address
+    method: levenshtein
+  - column: city
+    method: jarowinkler
+  - column: zip_code
+    method: exact
+
+thresholds:
+  auto_merge: 0.88
+  review: 0.7
+
+
+survivorship:
+  rules:
+    - column: first_name
+      strategy: most_common
+    - column: last_name
+      strategy: most_recent
+priority_rule:
+  column: Original
+  value: 1
+  column: COMDL
+  value: 1
+  column: REAL
+  value: 1
+
+# survivorship:
+#   rules:
+#     - column: original
+#       strategy: prefer_1
+#     - column: COMDL
+#       strategy: prefer_1
+#     - column: REAL
+#       strategy: prefer_1
+
+
+    # - column: address
+    #   strategy: longest_string
+    # - column: city
+    #   strategy: mode
+    # - column: state
+    #   strategy: mode
+    # - column: zip_code
+    #   strategy: mode
+    # - column: email
+    #   strategy: mode

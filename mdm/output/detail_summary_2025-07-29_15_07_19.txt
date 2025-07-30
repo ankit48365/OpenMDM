@@ -1,0 +1,31 @@
+
+--- AUTO_MERGE RECORDS ---
+🔹 Record 1 (2): {'first_name': 'Brent', 'middle_name': 'Tina', 'last_name': 'Keit', 'address': '546 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'brent keit'}
+🔸 Record 2 (3): {'first_name': 'Brent', 'middle_name': 'Tina', 'last_name': 'Keith', 'address': '547 Williams Points', 'city': 'Barbarabury', 'state': 'Oklahoma', 'zip_code': '28304', 'phone': '420-401-2179x21684', 'email': 'amybaker@example.org', 'original': 0, 'COMDL': 0, 'REAL': 1, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'brent keith'}
+💡 Similarity Score: 0.9007 | Match Category: auto_merge
+🏆 Trusted Record: 3
+--------------------------------------------------------------------------------
+🔹 Record 1 (6): {'first_name': 'Ryan', 'middle_name': 'BLANK', 'last_name': 'Stephens', 'address': '758 Robert Cliff', 'city': 'Lake Frankside', 'state': 'New Hampshire', 'zip_code': '06678', 'phone': '2156792243', 'email': 'woodwardkristin@example.org', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'ryan stephens'}
+🔸 Record 2 (7): {'first_name': 'Rya', 'middle_name': 'Katherine', 'last_name': 'Stephens', 'address': '758 Robert Cliff', 'city': 'Lake Frankside', 'state': 'New Hampshire', 'zip_code': '06678', 'phone': 'BLANK', 'email': 'woodwardkristin@example.org', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'rya stephens'}
+💡 Similarity Score: 0.8129 | Match Category: auto_merge
+🏆 Trusted Record: None (no priority match)
+--------------------------------------------------------------------------------
+
+--- REVIEW RECORDS ---
+🔹 Record 1 (0): {'first_name': 'Valerie', 'middle_name': 'Jessica', 'last_name': 'Phillip', 'address': '053 Hopkins Ports STE 23', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'BLANK', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'valerie phillip'}
+🔸 Record 2 (1): {'first_name': 'Valerie', 'middle_name': 'BLANK', 'last_name': 'Phillips', 'address': '054 Hopkins Ports Suite 23', 'city': 'West Wesley', 'state': 'Kentucky', 'zip_code': '57143', 'phone': '(211)590-4015x003', 'email': 'mwest@example.net', 'original': 0, 'COMDL': 1, 'REAL': '07/7/2022', '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'valerie phillips'}
+💡 Similarity Score: 0.6166 | Match Category: review
+🏆 Trusted Record: 1
+--------------------------------------------------------------------------------
+
+--- SINGLE RECORDS ---
+🔶 Single Record (4):
+{'first_name': 'Krista', 'middle_name': 'Anna', 'last_name': 'Leonard', 'address': '16462 Graham Plain', 'city': 'South Linda', 'state': 'South Carolina', 'zip_code': '64525', 'phone': '+1-232-755-1627x4205', 'email': 'langkathryn@example.com', 'original': 0, 'COMDL': 0, 'REAL': 0, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'krista leonard'}
+Source Record: 4
+Trusted Record: 4
+--------------------------------------------------------------------------------
+🔶 Single Record (5):
+{'first_name': 'Jose', 'middle_name': 'Matthew', 'last_name': 'Jennings', 'address': '82249 Hickman Haven', 'city': 'New Danielberg', 'state': 'Idaho', 'zip_code': '55847', 'phone': '798-675-8507x46574', 'email': 'richardrobert@example.net', 'original': 0, 'COMDL': 1, 'REAL': 0, '_load_datetime': '2025-07-29 18:37:47', 'concat_column': 'jose jennings'}
+Source Record: 5
+Trusted Record: 5
+--------------------------------------------------------------------------------

@@ -88,86 +88,72 @@ write_pairwise_summary(df, features, 'review', output_path)
 print(f"📊 MDM Summary Report saved here  {OUTPUT_PATH}{summary}")
 
 
+# 7. Cluster auto_merge pairs
+auto_merge_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
+auto_merge_pairs[['id_min', 'id_max']] = auto_merge_pairs[['record_id_1', 'record_id_2']].apply(
+    sorted, axis=1, result_type='expand'
+)
+auto_merge_pairs = auto_merge_pairs.drop_duplicates(subset=['id_min', 'id_max'])
 
+# 8. Build clusters
+G = nx.Graph()
+G.add_edges_from(auto_merge_pairs[['record_id_1', 'record_id_2']].values)
+clusters = list(nx.connected_components(G))
 
+# 9. Dynamic merge function with survivorship rules
+def merge_cluster(df, cluster, rules):
+    members = list(cluster)
+    records = df.loc[members]
+    merged = {}
+    for col in df.columns:
+        if col in rules:
+            strategy = rules[col]
+            if strategy == 'prefer_Y':
+                preferred = records[records[col] == 'Y'][col].dropna()
+                val = preferred.iloc[0] if not preferred.empty else records[col].dropna().iloc[0] if not records[col].dropna().empty else None # pylint: disable=line-too-long
+            elif strategy == 'longest_string':
+                val = max(records[col].dropna(), key=len, default=None)
+            elif strategy == 'mode':
+                val = Counter(records[col].dropna()).most_common(1)[0][0] if not records[col].dropna().empty else None # pylint: disable=line-too-long
+            else:
+                val = None
+            merged[col] = str(val).strip() if pd.notnull(val) else None
+    merged['source_ids'] = members
+    merged['merge_score'] = 1.0
+    return pd.Series(merged)
 
+# 10. Handle singletons
+all_ids = set(df.index)
+clustered_ids = set().union(*clusters)
+review_pairs = features[features['match_category'] == 'review'].reset_index()
+review_ids = set(review_pairs['record_id_1']) | set(review_pairs['record_id_2'])
+singleton_ids = sorted(all_ids - clustered_ids - review_ids)
 
+singleton_goldens = []
+for rid in singleton_ids:
+    record = df.loc[rid].copy()
+    clean_record = {col: str(record[col]).strip() if pd.notnull(record[col]) else None for col in df.columns if col != 'original'} # pylint: disable=line-too-long
+    clean_record['source_ids'] = [rid]
+    clean_record['merge_score'] = 0.0
+    singleton_goldens.append(clean_record)
 
+# 11. Write non-matched single records
+with open(output_path, 'a', encoding='utf-8') as f:
+    f.write('\n--- NON_MATCHED SINGLE RECORDS ---\n')
+    for rid in singleton_ids:
+        rec = df.loc[rid].to_dict()
+        f.write(f"🧍 Record ({rid}): {rec}\n")
+        f.write(f"💡 Similarity Score: 0.0 | Match Category: non_match (singleton)\n")
+        f.write('-' * 80 + '\n')
 
-
-
-
-
-
-
-
-
-# # 7. Cluster auto_merge pairs
-# auto_merge_pairs = features[features['match_category'] == 'auto_merge'].reset_index()
-# auto_merge_pairs[['id_min', 'id_max']] = auto_merge_pairs[['record_id_1', 'record_id_2']].apply(
-#     sorted, axis=1, result_type='expand'
-# )
-# auto_merge_pairs = auto_merge_pairs.drop_duplicates(subset=['id_min', 'id_max'])
-
-# # 8. Build clusters
-# G = nx.Graph()
-# G.add_edges_from(auto_merge_pairs[['record_id_1', 'record_id_2']].values)
-# clusters = list(nx.connected_components(G))
-
-# # 9. Dynamic merge function with survivorship rules
-# def merge_cluster(df, cluster, rules):
-#     members = list(cluster)
-#     records = df.loc[members]
-#     merged = {}
-#     for col in df.columns:
-#         if col in rules:
-#             strategy = rules[col]
-#             if strategy == 'prefer_1':
-#                 preferred = records[records[col] == '1'][col].dropna()
-#                 val = preferred.iloc[0] if not preferred.empty else records[col].dropna().iloc[0] if not records[col].dropna().empty else None # pylint: disable=line-too-long
-#             elif strategy == 'longest_string':
-#                 val = max(records[col].dropna(), key=len, default=None)
-#             elif strategy == 'mode':
-#                 val = Counter(records[col].dropna()).most_common(1)[0][0] if not records[col].dropna().empty else None # pylint: disable=line-too-long
-#             else:
-#                 val = None
-#             merged[col] = str(val).strip() if pd.notnull(val) else None
-#     merged['source_ids'] = members
-#     merged['merge_score'] = 1.0
-#     return pd.Series(merged)
-
-# # 10. Handle singletons
-# all_ids = set(df.index)
-# clustered_ids = set().union(*clusters)
-# review_pairs = features[features['match_category'] == 'review'].reset_index()
-# review_ids = set(review_pairs['record_id_1']) | set(review_pairs['record_id_2'])
-# singleton_ids = sorted(all_ids - clustered_ids - review_ids)
-
-# singleton_goldens = []
-# for rid in singleton_ids:
-#     record = df.loc[rid].copy()
-#     clean_record = {col: str(record[col]).strip() if pd.notnull(record[col]) else None for col in df.columns if col != 'original'} # pylint: disable=line-too-long
-#     clean_record['source_ids'] = [rid]
-#     clean_record['merge_score'] = 0.0
-#     singleton_goldens.append(clean_record)
-
-# # 11. Write non-matched single records
-# with open(output_path, 'a', encoding='utf-8') as f:
-#     f.write('\n--- NON_MATCHED SINGLE RECORDS ---\n')
-#     for rid in singleton_ids:
-#         rec = df.loc[rid].to_dict()
-#         f.write(f"🧍 Record ({rid}): {rec}\n")
-#         f.write(f"💡 Similarity Score: 0.0 | Match Category: non_match (singleton)\n")
-#         f.write('-' * 80 + '\n')
-
-# # 12. Merge clusters and combine golden records
-# unique_clusters = {frozenset(cluster) for cluster in clusters}
-# golden_clusters = [merge_cluster(df, list(cluster), survivorship_rules) for cluster in unique_clusters] # pylint: disable=line-too-long
-# singleton_goldens_series = [pd.Series(rec) for rec in singleton_goldens]
-# golden_df = pd.DataFrame(golden_clusters + singleton_goldens_series)
-# # golden_df = pd.DataFrame(golden_clusters + singleton_goldens)
-# golden = f"golden_rec_{TIMEIS}.txt"
-# output_path_2 = f"{OUTPUT_PATH}{golden}"
-# # golden_df.to_csv(r'D:\mygit\OpenMDM\mdm\source_data\golden_auto_records.csv', index=False)
-# golden_df.to_csv(output_path_2, index=False)
-# print(f"🥇 Golden Records Document Saved here: {output_path_2}")
+# 12. Merge clusters and combine golden records
+unique_clusters = {frozenset(cluster) for cluster in clusters}
+golden_clusters = [merge_cluster(df, list(cluster), survivorship_rules) for cluster in unique_clusters] # pylint: disable=line-too-long
+singleton_goldens_series = [pd.Series(rec) for rec in singleton_goldens]
+golden_df = pd.DataFrame(golden_clusters + singleton_goldens_series)
+# golden_df = pd.DataFrame(golden_clusters + singleton_goldens)
+golden = f"golden_rec_{TIMEIS}.txt"
+output_path_2 = f"{OUTPUT_PATH}{golden}"
+# golden_df.to_csv(r'D:\mygit\OpenMDM\mdm\source_data\golden_auto_records.csv', index=False)
+golden_df.to_csv(output_path_2, index=False)
+print(f"🥇 Golden Records Document Saved here: {output_path_2}")

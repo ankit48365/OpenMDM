@@ -28,34 +28,12 @@ similarity:
 thresholds:
   review: 0.6
   auto_merge: 0.8
+
 survivorship:
   rules:
-    - column: first_name
-      strategy: longest_if_null
-    - column: middle_name
-      strategy: longest_if_null
-    - column: last_name
-      strategy: longest_if_null
-    - column: address
-      strategy: longest_if_null
-    - column: city
-      strategy: longest_if_null
-    - column: state
-      strategy: longest_if_null
-    - column: zip_code
-      strategy: most_common
-    - column: phone
-      strategy: most_common
-    - column: email
-      strategy: longest_if_null
-    - column: original
-      strategy: most_common
-    - column: COMDL
-      strategy: most_common
-    - column: REAL
-      strategy: most_common
-    - column: _load_datetime
+    - column: CreatedON
       strategy: most_recent
+
 priority_rule:
   conditions:
     - column: original

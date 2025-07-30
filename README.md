@@ -10,7 +10,12 @@ Clone only required branch (dont clone main please)
 
 git clone --branch brnch_name --single-branch <repo-url>
 
+## Daily Operation
 
+```
+from root cirectory >> uv run .\mdm\file_to_db\csv_to_sqlite.py
+from dbt directory >> D:\mygit\OpenMDM\mdm\dbt_store_cleanup> uv run dbt run
+```
  
 ## DBT SQLITE
 
@@ -23,3 +28,5 @@ models:
     config:
       contract:
         enforced: true```
+
+
