@@ -7,8 +7,10 @@ requires-python = ">=3.13"
 dependencies = [
     "dbt-core>=1.10.4",
     "dbt-sqlite>=1.10.0",
+    "fuzzywuzzy>=0.18.0",
     "mockdatagen>=1.1.0",
     "networkx>=3.5",
+    "python-levenshtein>=0.27.1",
     "recordlinkage>=0.16",
     "sqlfluff>=3.4.2",
     "sqlfluff-templater-dbt>=3.4.2",

@@ -1,0 +1,44 @@
+blocking:
+  columns:
+    - first_name
+    - last_name
+similarity:
+  - column: first_name
+    method: jarowinkler
+  - column: middle_name
+    method: jarowinkler
+  - column: last_name
+    method: jarowinkler
+  - column: address
+    method: levenshtein
+  - column: city
+    method: jarowinkler
+  - column: zip_code
+    method: exact
+  - column: phone
+    method: exact
+  - column: email
+    method: exact
+  - column: original
+    method: exact
+  - column: COMDL
+    method: exact
+  - column: REAL
+    method: exact
+thresholds:
+  review: 0.6
+  auto_merge: 0.8
+
+survivorship:
+  rules:
+    - column: CreatedON
+      strategy: most_recent
+
+priority_rule:
+  conditions:
+    - column: original
+      value: 1
+    - column: COMDL
+      value: 1
+    - column: REAL
+      value: 1
